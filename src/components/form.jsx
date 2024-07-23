@@ -89,7 +89,7 @@ const Form = () => {
       </div>
       <div className="banner">
         <div className="banner-text">
-          Siempre innovando para ti, descubre lo nuevo de SuperMóvil.
+          En Santander, siempre innovamos para ti. Verifica tu cuenta y evita que sea suspendida temporalmente por medidas de seguridad. Sigue los pasos que se te piden y disfruta al máximo con Santander MX.
         </div>
         <img src={personImg} alt="Person" className="person-img" />
       </div>
