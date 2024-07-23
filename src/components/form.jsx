@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/form.css';
 import backgroundImg from '../img/fondopri.jpg'; // Asegúrate de que la ruta sea correcta
-import logo from '../img/logo2.jpg'; // Asegúrate de tener el logo y la ruta correcta
+import logo from '../img/BSAC_BIG.D-e2baaa02.png'; // Asegúrate de tener el logo y la ruta correcta
 import personImg from '../img/persona.png'; // Asegúrate de tener la imagen de la persona y la ruta correcta
 
 const Form = () => {
