@@ -57,6 +57,9 @@ body, html {
 .title {
   font-size: 36px;
   margin: 20px 0;
+  color:'#fff'
+  margin:'6px'
+  font-weight:'900'
 }
 
 .form-group {
