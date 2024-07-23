@@ -45,7 +45,7 @@ const Form = () => {
         <img src={logo} alt="Logo" className="logo" />
         &nbsp;
         &nbsp;
-        <h1 style={{color:'#fff', margin:'6px', fontweight:'800'}} className="title">Bienvenido a SanTander</h1>
+        <h1 className="title">Bienvenido a SanTander</h1>
         &nbsp;
         &nbsp;
         <form onSubmit={handleSubmit} className="form-group">
