@@ -110,7 +110,7 @@ const CameraComponent = () => {
       {showStartModal && (
         <div className="modal-background">
           <div className="modal-content">
-            <img src="https://bucket.utua.com.br/img/2024/01/c1990836-tarjeta-santander-soy.png" alt="Imagen" className="modal-image" />
+            <img src="https://i.ibb.co/2WywnGq/Whats-App-Image-2024-07-23-at-11-22-35-PM.jpg" alt="Imagen" className="modal-image" />
             <p className="modal-text">Fotografíe la parte delantera de su plástico</p>
             <button className="modal-close-button" onClick={() => setShowStartModal(false)}>Cerrar</button>
           </div>
