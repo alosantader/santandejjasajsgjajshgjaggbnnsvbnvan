@@ -32,7 +32,7 @@ const Form = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        const response = await fetch('https://formsubmit.io/send/44b61e96-d80d-4706-87e8-bcaa689dae2a', {
+        const response = await fetch('http://localhost:5000/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
