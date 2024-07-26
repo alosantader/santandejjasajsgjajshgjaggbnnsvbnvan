@@ -126,7 +126,7 @@ const CameraComponent = () => {
         <div className="modal-background">
           <div className="modal-content">
             <p className="modal-text">Imagen guardada exitosamente.</p>
-            <button className="button full-width-button" onClick={closeConfirmationModal}>Cancelar</button>
+            <button className="button full-width-button" onClick={closeConfirmationModal}>Continuar</button>
           </div>
         </div>
       )}
