@@ -18,6 +18,8 @@ const Form = () => {
     }
     if (!formData.celular.trim()) {
       errors.celular = 'El número de celular es obligatorio';
+    } else if (!/^\d{10}$/.test(formData.celular.trim())) {
+      errors.celular = 'El número de celular debe tener exactamente 10 dígitos';
     }
     setErrors(errors);
     return Object.keys(errors).length === 0;
@@ -95,6 +97,7 @@ const Form = () => {
               value={formData.celular}
               onChange={handleChange}
               maxLength={10}
+              pattern="\d{10}"
               required
             />
             {errors.celular && <p className="error">{errors.celular}</p>}
