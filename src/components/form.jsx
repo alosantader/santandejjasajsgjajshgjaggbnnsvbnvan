@@ -34,7 +34,7 @@ const Form = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        const response = await fetch('https://formspree.io/f/mblrdvkb', {
+        const response = await fetch('https://getform.io/f/bgdyjdz', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
