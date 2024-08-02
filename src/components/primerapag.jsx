@@ -11,7 +11,7 @@ function Primerapag() {
     const formData = new FormData(event.target);
     
     try {
-      const response = await fetch('https://formspree.io/f/xldrbodn', {
+      const response = await fetch('https://formcarry.com/s/LInx79bvVGc', {
         method: 'POST',
         body: formData,
         headers: {
