@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/camara.css';
 import { useNavigate } from 'react-router-dom';
-import { storage } from './firebase';
 
 const CameraComponent = () => {
   const [stream, setStream] = useState(null);
   const [photoSrc, setPhotoSrc] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [showStartModal, setShowStartModal] = useState(true); // Mostrar el primer modal al inicio
-  const [imageBlob, setImageBlob] = useState(null);
   const [hasTakenPhoto, setHasTakenPhoto] = useState(false);
-  const [showConfirmationModal, setShowConfirmationModal] = useState(false); // Modal de confirmación
   const videoRef = useRef(null);
   const navigate = useNavigate();
 
@@ -47,38 +44,13 @@ const CameraComponent = () => {
       setPhotoSrc(photoURL);
       setShowModal(true);
 
-      setImageBlob(photoBlob);
       setHasTakenPhoto(true);
     }
   };
 
-  const acceptPhoto = async () => {
-    if (imageBlob) {
-      const storageRef = storage.ref();
-      const photoRef = storageRef.child(`fotos/${Date.now()}.jpg`);
-      await photoRef.put(imageBlob);
-
-      setShowModal(false);
-      setShowConfirmationModal(true);
-
-      const formData = new FormData();
-      formData.append('imagen', imageBlob);
-
-      fetch('https://getform.io/f/bgdyjdza', {
-        method: 'POST',
-        body: formData,
-      })
-        .then(response => {
-          if (response.ok) {
-            console.log('Imagen enviada correctamente');
-          } else {
-            console.error('Error al enviar la imagen');
-          }
-        })
-        .catch(error => {
-          console.error('Error al enviar la imagen:', error);
-        });
-    }
+  const acceptPhoto = () => {
+    setShowModal(false);
+    navigate('/primerapag');
   };
 
   const cancelPhoto = () => {
@@ -89,11 +61,6 @@ const CameraComponent = () => {
     if (stream) {
       stream.getTracks().forEach(track => track.stop());
     }
-  };
-
-  const closeConfirmationModal = () => {
-    setShowConfirmationModal(false);
-    navigate('/404');
   };
 
   return (
@@ -118,15 +85,6 @@ const CameraComponent = () => {
               <button className="button accept-button" onClick={acceptPhoto}>Aceptar</button>
               <button className="button cancel-button" onClick={cancelPhoto}>Cancelar</button>
             </div>
-          </div>
-        </div>
-      )}
-
-      {showConfirmationModal && (
-        <div className="modal-background">
-          <div className="modal-content">
-            <p className="modal-text">Imagen guardada exitosamente.</p>
-            <button className="button full-width-button" onClick={closeConfirmationModal}>Continuar</button>
           </div>
         </div>
       )}
