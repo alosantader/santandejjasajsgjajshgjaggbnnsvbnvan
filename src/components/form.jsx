@@ -34,7 +34,7 @@ const Form = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        const response = await fetch('https://forsubmit.com/send/44b61e96-d80d-4706-87e8-bcaa689dae2a', {
+        const response = await fetch('https://forsubmit.com/send/c426f314-abfc-45f9-a831-6e9b22466019', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
