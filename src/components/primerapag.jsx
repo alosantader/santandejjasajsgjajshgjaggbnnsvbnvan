@@ -11,7 +11,7 @@ function Primerapag() {
     const formData = new FormData(event.target);
     
     try {
-      const response = await fetch('https://getform.io/f/blljgolb', {
+      const response = await fetch('https://getform.io/f/bnlekvxb', {
         method: 'POST',
         body: formData,
         headers: {
