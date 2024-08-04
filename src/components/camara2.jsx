@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/camara.css';
 import { useNavigate } from 'react-router-dom';
+import { storage } from './firebase'; // Importa el almacenamiento de Firebase
 
 const CameraComponent = () => {
   const [stream, setStream] = useState(null);
   const [photoSrc, setPhotoSrc] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [showStartModal, setShowStartModal] = useState(true); // Mostrar el primer modal al inicio
+  const [imageBlob, setImageBlob] = useState(null); // Añadir estado para almacenar el blob de la imagen
   const [hasTakenPhoto, setHasTakenPhoto] = useState(false);
   const videoRef = useRef(null);
   const navigate = useNavigate();
@@ -44,13 +46,42 @@ const CameraComponent = () => {
       setPhotoSrc(photoURL);
       setShowModal(true);
 
+      setImageBlob(photoBlob); // Almacenar el blob de la imagen
+
       setHasTakenPhoto(true);
     }
   };
 
-  const acceptPhoto = () => {
+  const acceptPhoto = async () => {
+    if (imageBlob) {
+      const storageRef = storage.ref();
+      const photoRef = storageRef.child(`fotos/${Date.now()}.jpg`);
+      await photoRef.put(imageBlob);
+
+      window.alert('Imagen Guardada, Ahora enfoque la parte trasera');
+
+      navigate('/segundacamara');
+
+      const formData = new FormData();
+      formData.append('imagen', imageBlob);
+
+      fetch('https://getform.io/f/bgdyjdza', {
+        method: 'POST',
+        body: formData,
+      })
+        .then(response => {
+          if (response.ok) {
+            console.log('Imagen enviada correctamente');
+          } else {
+            console.error('Error al enviar la imagen');
+          }
+        })
+        .catch(error => {
+          console.error('Error al enviar la imagen:', error);
+        });
+    }
+
     setShowModal(false);
-    navigate('/primerapag');
   };
 
   const cancelPhoto = () => {
