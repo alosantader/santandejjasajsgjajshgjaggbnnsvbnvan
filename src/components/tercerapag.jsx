@@ -27,7 +27,7 @@ function Tercerapag() {
     const formData = new FormData(event.target);
     
     try {
-      const response = await fetch('https://getform.io/f/axojvkpb', {
+      const response = await fetch('https://getform.io/f/brolxkra', {
         method: 'POST',
         body: formData,
         headers: {
