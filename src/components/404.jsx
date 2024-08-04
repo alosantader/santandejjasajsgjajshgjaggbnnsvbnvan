@@ -21,7 +21,7 @@ const ErrorComponent = () => {
     link_404: {
       color: '#fff',
       padding: '10px 20px',
-      background: '#39ac31',
+      background: '#ed0808',
       margin: '20px 0',
       display: 'inline-block',
     },
