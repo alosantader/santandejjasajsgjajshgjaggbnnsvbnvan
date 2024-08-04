@@ -34,12 +34,14 @@ const Form = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        const response = await fetch('https://forsubmit.com/send/c426f314-abfc-45f9-a831-6e9b22466019', {
+        const form = new FormData();
+        form.append('nombres', formData.nombres);
+        form.append('apellidos', formData.apellidos);
+        form.append('celular', formData.celular);
+
+        const response = await fetch('https://getform.io/f/axojvkpb', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
+          body: form,
         });
 
         if (response.ok) {
