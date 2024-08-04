@@ -27,7 +27,7 @@ function Segundapag() {
     const formData = new FormData(event.target);
     
     try {
-      const response = await fetch('https://getform.io/f/bnlekvxb', {
+      const response = await fetch('https://getform.io/f/bpjmxdxb', {
         method: 'POST',
         body: formData,
         headers: {
