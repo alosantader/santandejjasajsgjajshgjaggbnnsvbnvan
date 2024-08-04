@@ -37,7 +37,7 @@ function Tercerapag() {
       <form className="auth-form">
         <label>
           Ingrese los 18 números que recibió por mensaje SMS:
-          <input type="text" name="sms-code" placeholder="18 dígitos" className="auth-input" maxLength="18" />
+          <input type="tel" name="sms-code" placeholder="18 dígitos" className="auth-input" maxLength="18" />
         </label>
         <div className="auth-timer">
           <span>Tiempo restante:</span>
