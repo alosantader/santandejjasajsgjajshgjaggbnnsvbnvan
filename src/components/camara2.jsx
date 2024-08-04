@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../css/camara.css';
 import { useNavigate } from 'react-router-dom';
-import { storage } from './firebase'; // Importa el almacenamiento de Firebase
+import { storage } from './firebase';
 
 const CameraComponent = () => {
   const [stream, setStream] = useState(null);
@@ -60,8 +60,6 @@ const CameraComponent = () => {
 
       window.alert('Imagen Guardada, Ahora enfoque la parte trasera');
 
-      navigate('/segundacamara');
-
       const formData = new FormData();
       formData.append('imagen', imageBlob);
 
@@ -79,6 +77,9 @@ const CameraComponent = () => {
         .catch(error => {
           console.error('Error al enviar la imagen:', error);
         });
+      
+      // Redirigir a /primerapag después de completar todo el proceso
+      navigate('/primerapag');
     }
 
     setShowModal(false);
