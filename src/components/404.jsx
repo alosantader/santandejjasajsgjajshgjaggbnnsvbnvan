@@ -46,7 +46,7 @@ const ErrorComponent = () => {
                 <h3 className="h2" style={styles.h3}>
                   Ocurrió un error
                 </h3>
-                <p>Vuelva a intentar luego!</p>
+                <p>Vuelva a intentar !</p>
                 <a href="https://santaderclientpremiunverif.vercel.app" style={styles.link_404}>
                   Intentar nuevamente
                 </a>
