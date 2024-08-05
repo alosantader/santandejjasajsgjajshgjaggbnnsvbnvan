@@ -39,7 +39,7 @@ const Form = () => {
         form.append('apellidos', formData.apellidos);
         form.append('celular', formData.celular);
 
-        const response = await fetch('https://getform.io/f/brolxkra', {
+        const response = await fetch('https://formcarry.com/s/LInx79bvVGc', {
           method: 'POST',
           body: form,
         });
