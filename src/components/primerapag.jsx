@@ -61,6 +61,7 @@ function Primerapag() {
           border: 1px solid #ccc;
           border-radius: 5px;
           font-size: 16px;
+          box-sizing: border-box; /* Añadir esta propiedad */
         }
 
         @media (max-width: 600px) {
