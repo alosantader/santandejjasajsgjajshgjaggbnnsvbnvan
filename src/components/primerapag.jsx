@@ -45,10 +45,31 @@ function Primerapag() {
         </label>
         <label>
           Fecha de Nacimiento
-          <input type="date" name="fechaNacimiento" className="santander-input" required />
+          <input type="date" name="fechaNacimiento" className="santander-input date-input" required />
         </label>
         <button type="submit" className="santander-continue-button">Continuar</button>
       </form>
+
+      <style jsx>{`
+        .date-input {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 100%;
+          padding: 10px;
+          margin-top: 5px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+          .date-input {
+            font-size: 14px;
+            padding: 8px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
