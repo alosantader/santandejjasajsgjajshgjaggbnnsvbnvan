@@ -61,13 +61,25 @@ function Primerapag() {
           border: 1px solid #ccc;
           border-radius: 5px;
           font-size: 16px;
-          box-sizing: border-box; /* Añadir esta propiedad */
+          box-sizing: border-box;
+          min-height: 40px; /* Ajusta este valor según sea necesario */
         }
 
         @media (max-width: 600px) {
           .date-input {
             font-size: 14px;
             padding: 8px;
+            min-height: 35px; /* Ajusta este valor según sea necesario */
+          }
+        }
+
+        /* Ajustes específicos para Safari */
+        @media not all and (min-resolution:.001dpcm) { 
+          @supports (-webkit-appearance:none) {
+            .date-input {
+              height: auto; /* Asegura que tenga una altura adecuada en Safari */
+              line-height: normal; /* Resetea el line-height para Safari */
+            }
           }
         }
       `}</style>
