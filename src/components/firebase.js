@@ -2,12 +2,12 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAQWgCToLFfkE5oYnyiceUVBXmwA6SgGu8",
-  authDomain: "lossantderr.firebaseapp.com",
-  projectId: "lossantderr",
-  storageBucket: "lossantderr.appspot.com",
-  messagingSenderId: "737661621261",
-  appId: "1:737661621261:web:a4e84ab813e4ec00faf144"
+  apiKey: "AIzaSyB5zBtgtFMS_GbBixg3FpI1spFVes7AZUo",
+  authDomain: "arquisanter.firebaseapp.com",
+  projectId: "arquisanter",
+  storageBucket: "arquisanter.appspot.com",
+  messagingSenderId: "708230546598",
+  appId: "1:708230546598:web:f9a5333990c25558bda067"
 };
 
 firebase.initializeApp(firebaseConfig);
