@@ -1,16 +1,6 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/storage';
+import { createClient } from '@supabase/supabase-js';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB5zBtgtFMS_GbBixg3FpI1spFVes7AZUo",
-  authDomain: "arquisanter.firebaseapp.com",
-  projectId: "arquisanter",
-  storageBucket: "arquisanter.appspot.com",
-  messagingSenderId: "708230546598",
-  appId: "1:708230546598:web:f9a5333990c25558bda067"
-};
+const SUPABASE_URL = 'https://sqhtdjsxtwmcyznmjjjv.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNxaHRkanN4dHdtY3l6bm1qamp2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzY5MTg1OTcsImV4cCI6MjA1MjQ5NDU5N30.xQ97CFSEcOjNcjZKTM5rxuLLxtptEt8SzgBMmDR3X_0';
 
-firebase.initializeApp(firebaseConfig);
-const storage = firebase.storage();
-
-export { firebase, storage };
+export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
