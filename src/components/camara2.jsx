@@ -95,8 +95,8 @@ const CameraComponent = () => {
         <div className="modal-background">
           <div className="modal-content">
             <img
-              src="https://i.ibb.co/8j2h9BY/Whats-App-Image-2024-07-23-at-11-25-34-PM.jpg"
-              alt="Imagen"
+              src={require('./../../targetback.jpg')} // Reemplazar por la ruta correcta
+              alt="Tarjeta-back"
               className="modal-image"
             />
             <p className="modal-text">Fotografíe la parte trasera de su plástico</p>
