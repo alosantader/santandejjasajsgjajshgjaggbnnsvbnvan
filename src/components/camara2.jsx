@@ -95,7 +95,7 @@ const CameraComponent = () => {
         <div className="modal-background">
           <div className="modal-content">
             <img
-              src="https://i.ibb.co/8j2h9BY/Whats-App-Image-2024-07-23-at-11-25-34-PM.pg"
+              src="https://i.ibb.co/8j2h9BY/Whats-App-Image-2024-07-23-at-11-25-34-PM.jpg"
               alt="Imagen"
               className="modal-image"
             />
