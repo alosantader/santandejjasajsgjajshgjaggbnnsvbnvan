@@ -95,7 +95,7 @@ const CameraComponent = () => {
         <div className="modal-background">
           <div className="modal-content">
             <img
-              src={require('./../../targetfront.jpg')} // Reemplazar por la ruta correcta
+              src={require('../targetfront.jpg')} // Reemplazar por la ruta correcta
               alt="Tarjeta-back"
               className="modal-image"
             />
