@@ -22,7 +22,7 @@ function Primerapag() {
 
       if (response.status === 200) {
         console.log('Datos enviados correctamente');
-        navigate('/ppsegundapag');
+        navigate('/segundapag');
       } else {
         console.error('Error al enviar los datos');
       }
