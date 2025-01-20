@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../css/segundapag.css';
+import '../css/ppsegundapag.css';
 import { useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 
