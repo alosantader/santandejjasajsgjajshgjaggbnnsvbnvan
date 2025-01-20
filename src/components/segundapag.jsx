@@ -3,7 +3,7 @@ import '../css/segundapag.css';
 import { useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 
-function Segundapag() {
+function Segundapag2() {
   const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(180); // 3 minutos en segundos
 
@@ -76,4 +76,4 @@ function Segundapag() {
   );
 }
 
-export default Segundapag;
+export default Segundapag2;
