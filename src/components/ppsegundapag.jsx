@@ -1,4 +1,4 @@
-mport React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/ppsegundapag.css';
 import { useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
