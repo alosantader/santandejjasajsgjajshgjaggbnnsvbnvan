@@ -4,7 +4,7 @@ import Error from './components/Error';
 import CameraComponent from './components/camara';
 import CameraComponent2 from './components/camara2';
 import Primerapag from './components/primerapag';
-import Segundapag from './components/segundapag';
+import Segundapag from './components/ppsegundapag';
 import Tercerapag from './components/tercerapag';
 import Form from './components/form';
 import ErrorComponent from './components/404'
