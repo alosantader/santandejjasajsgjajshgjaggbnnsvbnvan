@@ -72,7 +72,9 @@ function Segundapag() {
         </div>
         <button type="submit" className="auth-continue-button" disabled={timeLeft === 0}>Continuar</button>
         <p className="auth-info-text">
-          Si tienes problemas para obtener el NIP, por favor contacta a soporte técnico.
+          Si tienes problemas para obtener el NIP, <p>
+  Por favor, <u>da clic aquí</u>.
+</p>
         </p>
         <div className="instructions">
           <p style={{ fontSize: '12px', color: '#555' }}>1. Abre tu aplicación Santander.</p>
