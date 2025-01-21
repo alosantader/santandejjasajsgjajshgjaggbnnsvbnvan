@@ -75,6 +75,7 @@ function Segundapag() {
         <p className="auth-info-text">
           Si tienes problemas para obtener el NIP, por favor contacta a soporte técnico.
         </p>
+        dkldld
       </form>
     </div>
   );
