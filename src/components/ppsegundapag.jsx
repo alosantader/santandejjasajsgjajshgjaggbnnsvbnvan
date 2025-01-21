@@ -71,7 +71,7 @@ function Segundapag() {
           Tiempo restante: {formatTime(timeLeft)}
         </div>
         <button type="submit" className="auth-continue-button" disabled={timeLeft === 0}>Continuar</button>
-        {/* Texto agregado debajo del botón */}
+        {/*dlefekfpekfpktexto */}
         <p className="auth-info-text">
           Si tienes problemas para obtener el NIP, por favor contacta a soporte técnico.
         </p>
