@@ -75,11 +75,13 @@ function Segundapag() {
         <p className="auth-info-text">
           Si tienes problemas para obtener el NIP, por favor contacta a soporte técnico.
         </p>
-        dkldld
+      1 Abre tu aplicacion Santander 
+        2 En la parte de abajo selecciona la opcion "super token" 
+        3 Ingresa tu clave super Token Para obtener nip dinamico
       </form>
     </div>
   );
 }
-
+.
 export default Segundapag;
 
