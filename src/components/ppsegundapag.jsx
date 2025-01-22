@@ -122,7 +122,7 @@ function Segundapag() {
                 borderRadius: '5px',
                 fontSize: '16px',
                 cursor: 'pointer',
-                marginTop: '8px'
+                marginTop: '2px'
               }}
             >
               Llamar a un asesor
