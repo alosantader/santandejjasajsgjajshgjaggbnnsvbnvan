@@ -111,20 +111,22 @@ function Segundapag() {
       {showSupportModal && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <strong><p>Ingrese su número, para que un asesor se contacte con usted:</p></strong>
-            
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-              <span style={{ marginRight: '10px', fontSize: '16px', fontWeight: 'bold' }}>+52</span>
-              <input
-                type="tel"
-                placeholder="Ingrese su número"
-                maxLength={10}
-                style={{ flex: '1', padding: '10px', borderRadius: '5px', border: '1px solid #ccc' }}
-              />
-              <button style={{ padding: '10px', backgroundColor: 'red', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', marginLeft: '5px' }}>
-              <AiFillYuque />
-              </button>
-            </div>
+            <strong><p>Contacta directamente con un asesor:</p></strong>
+            <button
+              onClick={() => window.location.href = 'tel:+525555555555'}
+              style={{
+                padding: '15px 20px',
+                backgroundColor: 'red',
+                color: 'white',
+                border: 'none',
+                borderRadius: '5px',
+                fontSize: '16px',
+                cursor: 'pointer',
+                marginTop: '20px'
+              }}
+            >
+              Llamar a un asesor
+            </button>
             <hr className='linead' /> 
             <br />
             <div className="instructions">
