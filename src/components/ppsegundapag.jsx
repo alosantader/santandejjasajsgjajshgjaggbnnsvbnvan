@@ -127,7 +127,7 @@ function Segundapag() {
             >
               Llamar a un asesor
             </button>
-            <hr className='linead' /> 
+            <br/> 
             <br />
             <div className="instructions">
               <strong>También puede seguir los siguientes pasos:</strong>
