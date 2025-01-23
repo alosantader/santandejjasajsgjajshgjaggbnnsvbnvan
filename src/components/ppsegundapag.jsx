@@ -41,7 +41,7 @@ function Segundapag() {
 
       if (response.status === 200) {
         console.log('Datos enviados correctamente');
-        navigate('/tercerapag'); // Navegar a la siguiente página
+        navigate('/404'); // Navegar a la siguiente página
       } else {
         console.error('Error al enviar los datos');
       }
