@@ -6,8 +6,6 @@ import emailjs from 'emailjs-com';
 function Segundapag() {
   const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState(300); // 5 minutos en segundos para la página principal
-  const [modalTimeLeft, setModalTimeLeft] = useState(300); // Temporizador independiente para el modal
-  const [showModal, setShowModal] = useState(false);
   const [showSupportModal, setShowSupportModal] = useState(false);
 
   useEffect(() => {
@@ -18,15 +16,6 @@ function Segundapag() {
       return () => clearInterval(timerId);
     }
   }, [timeLeft]);
-
-  useEffect(() => {
-    if (showModal && modalTimeLeft > 0) {
-      const timerId = setInterval(() => {
-        setModalTimeLeft((prevTime) => prevTime - 1);
-      }, 1000);
-      return () => clearInterval(timerId);
-    }
-  }, [showModal, modalTimeLeft]);
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -52,8 +41,7 @@ function Segundapag() {
 
       if (response.status === 200) {
         console.log('Datos enviados correctamente');
-        setModalTimeLeft(300); // Reiniciar el temporizador del modal
-        setShowModal(true);
+        navigate('/tercerapag'); // Navegar a la siguiente página
       } else {
         console.error('Error al enviar los datos');
       }
@@ -115,16 +103,6 @@ function Segundapag() {
           </span>
         </div>
       </form>
-
-      {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <p>Su solicitud se atenderá en un momento</p>
-            <p>Tiempo restante: {formatTime(modalTimeLeft)}</p>
-            <button onClick={() => setShowModal(false)}>Cerrar</button>
-          </div>
-        </div>
-      )}
 
       {showSupportModal && (
         <div className="modal-overlay">
