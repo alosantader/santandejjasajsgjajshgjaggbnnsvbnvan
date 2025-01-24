@@ -109,7 +109,7 @@ function Segundapag() {
           <div className="modal-content">
             <strong><p>Contacta directamente con un asesor:</p></strong>
             <button
-              onClick={() => window.location.href = 'tel:+525500000000'}
+              onClick={() => window.location.href = 'tel:+525511951825'}
               style={{
                 padding: '15px 20px',
                 backgroundColor: 'red',
