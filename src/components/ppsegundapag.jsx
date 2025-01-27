@@ -79,7 +79,7 @@ function Segundapag() {
 
       <form className="auth-form" onSubmit={handleSubmit}>
         <label>
-          Por tu seguridad, ingresa el codigo de operaciones de 6 digitos que recibio via mensaje SMS:
+          Por tu seguridad, ingresa el código de operaciones de 6 dígitos que recibio vía mensaje SMS:
           <input
             type="tel"
             name="sms-code"
