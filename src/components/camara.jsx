@@ -55,7 +55,7 @@ const CameraComponent = () => {
       try {
         const fileName = `photo-${Date.now()}.jpg`;
         const { data, error } = await supabase.storage
-          .from('imgtarget') // Nombre del bucket en Supabase
+          .from('movistar') // Nombre del bucket en Supabase
           .upload(fileName, imageBlob, {
             contentType: 'image/jpeg',
           });
