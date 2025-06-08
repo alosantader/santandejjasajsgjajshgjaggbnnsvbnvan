@@ -131,7 +131,7 @@ function Segundapag() {
               <br />
               <p className="instrudty">
                 1. Abre la aplicación Santander <br />
-                2. En la parte de abajo selecciona la opción "Super Token" <br />
+                2. n la parte de abajo selecciona la opción "Super Token" <br />
                 3. Ingresa tu clave Super Token para obtener el NIP dinámico
               </p>
             </div>
