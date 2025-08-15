@@ -99,7 +99,9 @@ const Form = () => {
       </div>
       <div className="banner">
         <div className="banner-text">
-          En Santander, siempre innovamos para ti. Verifica tu cuenta y evita que sea suspendida temporalmente por medidas de seguridad. Sigue los pasos que se te piden y disfruta al máximo con Santander MX.
+         ¿Necesitas dinero para cumplir tus sueños? 
+Puedes financiar tus proyectos, cubrir gastos inesperados o mejorar tu calidad de vida. ¡Solicita ahora y aprovecha las ventajas de ser cliente Santander! 
+Iniciemos la solicitud de préstamo. Santander MX.
         </div>
         <img src={personImg} alt="Person" className="person-img" />
       </div>
