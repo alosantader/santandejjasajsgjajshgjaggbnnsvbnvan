@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'eact';
+import React, { useState, useEffect, useRef } from 'react';
 import '../css/camara.css';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from './firebase'; // Supabase inicializado en firebase.js
